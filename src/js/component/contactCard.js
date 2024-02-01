@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactCard = ({ onSubmit }) => {
   const [contact, setContact] = useState({ name: '', email: '', phone: '' });
 
   const handleChange = (e) => {
@@ -61,4 +61,4 @@ const ContactForm = ({ onSubmit }) => {
   );
 };
 
-export default ContactForm;
+export default ContactCard;
