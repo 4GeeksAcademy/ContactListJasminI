@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			getContacts: () => {
-		fetch("https://playground.4geeks.com/apis/fake/contact/agenda/my_super_agenda")
+		fetch("https://playground.4geeks.com/apis/fake/contact/")
 		.then((response)=> {
 			if(response.ok){
 				return response.json();

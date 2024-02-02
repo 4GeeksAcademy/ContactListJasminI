@@ -12,7 +12,7 @@ export const AddContact = () => {
     // This effect runs when the component mounts
     if ("contactId" in params) {
       // If a 'contactId' parameter is present in the URL, fetch the contact data from an API
-      fetch(`https://playground.4geeks.com/apis/fake/contact/${params.contactId}`)
+      fetch(` https://playground.4geeks.com/apis/fake/contact/${params.contactId}`)
         .then((response) => response.json())
         .then((body) => setNewContact(body[0]));  // Set the fetched contact data to the state
     }
@@ -28,7 +28,7 @@ export const AddContact = () => {
   // updateContact is a function that sends a PUT request to update an existing contact
   const updateContact = async () => {
     const response = await fetch(
-      `https://playground.4geeks.com/apis/fake/contact/${params.contactId}`,
+      ` https://playground.4geeks.com/apis/fake/contact/${params.contactId}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ export const AddContact = () => {
   // createContact is a function that sends a POST request to create a new contact
   const createContact = async () => {
     const response = await fetch(
-      "https://playground.4geeks.com/apis/fake/contact",
+      " https://playground.4geeks.com/apis/fake/contact/",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

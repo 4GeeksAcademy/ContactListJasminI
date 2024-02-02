@@ -9,6 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Footer } from "./component/footer";
 import { Contacts } from "./views/Contacts";
+import { ContactCard } from "./component/ContactCard";
 import { AddContact } from "./views/AddContact";
 
 
