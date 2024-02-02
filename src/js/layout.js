@@ -2,40 +2,34 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+
+import Contact from "./views/Contact.jsx";
+import Form from "./views/Form.jsx";
 import injectContext from "./store/appContext";
 
-import { Footer } from "./component/footer";
-import { Contacts } from "./views/Contacts";
-import { ContactCard } from "./component/ContactCard";
-import { AddContact } from "./views/AddContact";
+
 
 
 //create your first component
 const Layout = () => {
-  //the basename is used when your project is published in a subdirectory and not in the root of the domain
-  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-  const basename = process.env.BASENAME || "";
+	//the basename is used when your project is published in a subdirectory and not in the root of the domain
+	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+	const basename = process.env.BASENAME || "";
 
-  return (
-    <div>
-      <BrowserRouter basename={basename}>
-        <ScrollToTop>
-          <Routes>
-            <Route path="/" element={<Contacts />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/add" element={<AddContact />} />
-            <Route path="/demo" element={<Demo />} />
-            <Route path="/contacts/:contactId" element={<AddContact />} />
-            <Route path="*" element={<h1>Not found!</h1>} />
-          </Routes>
-          <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
-    </div>
-  );
+	return (
+		<div>
+			<BrowserRouter basename={basename}>
+				<ScrollToTop>					
+					<Routes>						
+						<Route path="/" element={<Contact />}/>
+						<Route path="/contact" element={<Form />}/>
+						<Route path="/contact/:id" element={<Form />}/>
+						<Route path="*" element={<h1>Not found!</h1>} />
+					</Routes>					
+				</ScrollToTop>
+			</BrowserRouter>
+		</div>
+	);
 };
 
 export default injectContext(Layout);
